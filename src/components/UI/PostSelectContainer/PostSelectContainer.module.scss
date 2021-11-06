@@ -1,0 +1,14 @@
+@import '../../../scss/mixins.scss';
+
+.postSelectContainer {
+  @include displayFlex;
+  @include flexFlow(column);
+  @include alignCenter;
+  @include justifyCenter;
+  @include boxShadow(1px, 1px, 3px, #000);
+  height: 110px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+}

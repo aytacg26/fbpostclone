@@ -1,0 +1,24 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.Terms {
+  @include flexFlow(row, wrap);
+  @include flexSpaceBetween;
+  padding: 5px 15px 0 0;
+
+  a,
+  span {
+    color: $header-text-color;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+
+  a {
+    color: $header-text-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

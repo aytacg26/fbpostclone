@@ -1,0 +1,23 @@
+@import '../../../scss/mixins.scss';
+.ProfileImageContainer {
+  @include displayFlex;
+  @include alignCenter;
+  @include justifyCenter;
+  max-width: 165px;
+  max-height: 165px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+
+  img {
+    border-radius: 50%;
+    object-position: top;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

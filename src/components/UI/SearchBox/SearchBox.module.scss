@@ -1,0 +1,26 @@
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+.SearchBox {
+  @include displayFlex;
+  @include alignCenter;
+  padding: 6px 8px;
+  background-color: $site-light-grey;
+  border-radius: 20px;
+
+  label {
+    margin-top: 3px;
+    color: rgb(145, 145, 145);
+  }
+
+  input {
+    border: 0 none;
+    outline: none;
+    background-color: transparent;
+    padding: 6px 5px 5px 5px;
+
+    &::placeholder {
+      font-size: 1.08em;
+      color: #65676b;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import './scss/mixins.scss';
+
+.App {
+  @include flexFlow('column', 'nowrap');
+  background-color: #f0f2f5;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .main-content-container {
+    @include displayFlex;
+    padding-top: 60px;
+    overflow: hidden;
+    max-height: calc(100vh - 60px);
+
+    .posts-section {
+      @include displayFlex;
+      @include flexFlow(column);
+      margin: 18px auto;
+    }
+  }
+}

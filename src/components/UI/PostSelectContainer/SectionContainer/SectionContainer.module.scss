@@ -1,0 +1,11 @@
+@import '../../../../scss/mixins.scss';
+.SectionContainer {
+  //   @include displayFlex;
+  @include flexSpaceBetween;
+  @include alignCenter;
+  @include fullWidthHeight;
+
+  &.containerBorder {
+    border-bottom: 1px solid rgb(226, 226, 226);
+  }
+}

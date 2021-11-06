@@ -1,0 +1,11 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.LeftMenuLink {
+  width: 100%;
+  min-height: 70px;
+  max-height: 70px;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+}

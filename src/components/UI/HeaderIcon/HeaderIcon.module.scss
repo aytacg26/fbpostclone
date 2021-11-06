@@ -1,0 +1,48 @@
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+
+.headerIcon {
+  @include displayFlex;
+  @include alignCenter;
+  height: 92%;
+  font-size: 1.6em;
+  padding: 0 10px;
+  margin: 0 6px;
+  cursor: pointer;
+  color: $header-text-color;
+  border-bottom: 4px solid transparent;
+  position: relative;
+
+  .IconArea {
+    width: inherit;
+    padding: 9px 50px 7px 50px;
+    border-radius: 15px;
+  }
+
+  &:hover .IconArea {
+    background-color: rgb(243, 243, 243);
+  }
+
+  &.selected {
+    color: $site-blue-color;
+    border-bottom: 4px solid $site-blue-color;
+  }
+
+  &.selected:hover .IconArea {
+    background-color: #fff;
+  }
+
+  label {
+    @include boxShadow(1px, 1px, 3px, #000);
+    position: absolute;
+    font-size: 0.55em;
+    bottom: -42px;
+    left: 50%;
+    transform: translate(-48%, 0);
+    padding: 9px 14px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    z-index: 999;
+  }
+}

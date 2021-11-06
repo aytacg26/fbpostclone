@@ -1,0 +1,28 @@
+@import '../../../scss/variables.scss';
+
+.MenuContainer {
+  width: 100%;
+  max-width: 360px;
+  height: calc(100vh - 65px);
+  max-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 20px;
+  padding: 10px 0 10px 10px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $site-light-grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+    border-radius: 10px;
+  }
+}

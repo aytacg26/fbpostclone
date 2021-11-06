@@ -1,0 +1,42 @@
+@import '../../../scss/mixins.scss';
+
+.headerContainer {
+  @include GridColumnDivided(3);
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 2px -2px 5px black;
+
+  .headerLeft {
+    @include flexFlow(row, nowrap);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    .headerLogo {
+      margin: 0 10px 0 18px;
+    }
+  }
+
+  .headerCenter {
+    @include displayFlex;
+    @include alignFlexEnd;
+    @include justifyCenter;
+    height: 100%;
+    width: 100%;
+  }
+
+  .headerRight {
+    @include displayFlex;
+    @include alignCenter;
+    @include justifyFlexEnd;
+    padding: 0 20px;
+    height: 100%;
+  }
+}

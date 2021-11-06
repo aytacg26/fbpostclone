@@ -1,0 +1,124 @@
+@mixin displayFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flexSpaceBetween {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin GridColumnDivided($divisionNumber: 2) {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat($divisionNumber, 1fr);
+}
+
+@mixin alignCenter {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin alignFlexEnd {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin justifyFlexEnd {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+@mixin justifyCenter {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin fullWidthHeight {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin boxShadow($offset-x, $offset-y, $blur-radius, $color) {
+  -webkit-box-shadow: $offset-x $offset-y $blur-radius $color;
+  box-shadow: $offset-x $offset-y $blur-radius $color;
+}
+
+@mixin widthMaxContent {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@mixin heightMaxContent {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+@mixin flexFlow($flex-direction: row, $flex-wrap: nowrap) {
+  -webkit-box-direction: normal;
+  -ms-flex-flow: $flex-direction $flex-wrap;
+  flex-flow: $flex-direction $flex-wrap;
+
+  @if $flex-direction == column {
+    -webkit-box-orient: vertical;
+  }
+
+  @if $flex-direction == row {
+    -webkit-box-orient: horizontal;
+  }
+}
+
+@mixin Story {
+  display: -ms-grid;
+  display: grid;
+  height: 189px;
+  width: 107px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-right: 6px;
+  -webkit-box-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px black;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  .Glass {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    opacity: 0.09;
+    position: absolute;
+    z-index: 8;
+    transition: linear 0.8s;
+  }
+
+  &:hover .Glass {
+    opacity: 0.1;
+    background: #000;
+  }
+
+  .StoryImage {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: linear 0.5s;
+    z-index: 1;
+  }
+
+  &:hover .StoryImage {
+    transform: scale(1.05);
+  }
+}
