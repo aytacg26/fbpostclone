@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import Backdrop from '../Backdrop/Backdrop';
 import ModalContainer from '../ModalContainer/ModalContainer';

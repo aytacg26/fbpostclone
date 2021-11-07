@@ -7,9 +7,6 @@ import CreatePostSection from './components/UI/PostSelectContainer/CreatePostSec
 import PostOptionsSection from './components/UI/PostSelectContainer/PostOptionsSection/PostOptionsSection';
 import StoryContainer from './components/UI/StoryContainer/StoryContainer';
 import Modal from './components/UI/Modal/Modal/Modal';
-import Backdrop from './components/UI/Modal/Backdrop/Backdrop';
-import ModalContainer from './components/UI/Modal/ModalContainer/ModalContainer';
-import CircleButton from './components/UI/CircleButton/CircleButton';
 
 //TODO : Use Context API or Redux for state management, heavy prop drilling started!!!
 const App = () => {

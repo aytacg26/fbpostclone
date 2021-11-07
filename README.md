@@ -8,3 +8,17 @@ also search box on header will have functionality like in facebook.
 
 Start Date : November 6, 2021
 Expected completion date : Before 15th of November 2021
+
+## Date 07/11/2021 Screenshots from the clone study :
+
+### Wall Image No Activity :
+
+<img width="958" alt="Page" src="https://user-images.githubusercontent.com/51089771/140656438-cc398786-cf3d-4116-b540-6f005778941a.png">
+
+### Wall Image Search Box Used
+
+<img width="958" alt="Page2" src="https://user-images.githubusercontent.com/51089771/140656460-1e9a5db4-4ac8-4967-ac3d-07332615058e.png">
+
+### Wall Image Left Menu Show More Clicked
+
+<img width="958" alt="Page3" src="https://user-images.githubusercontent.com/51089771/140656505-30efc0d9-5992-4c2d-8757-e276c8b04c6b.png">
