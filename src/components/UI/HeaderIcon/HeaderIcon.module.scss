@@ -3,7 +3,7 @@
 
 .headerIcon {
   @include displayFlex;
-  @include alignCenter;
+  @include align(center);
   height: 92%;
   font-size: 1.6em;
   padding: 0 10px;
@@ -34,15 +34,14 @@
 
   label {
     @include boxShadow(1px, 1px, 3px, #000);
+    @include transform(translate(-48%, 0));
     position: absolute;
     font-size: 0.55em;
     bottom: -42px;
     left: 50%;
-    transform: translate(-48%, 0);
     padding: 9px 14px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     color: #fff;
-    z-index: 999;
   }
 }

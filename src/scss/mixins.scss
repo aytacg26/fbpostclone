@@ -19,28 +19,16 @@
   grid-template-columns: repeat($divisionNumber, 1fr);
 }
 
-@mixin alignCenter {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+@mixin align($type) {
+  webkit-box-align: $type;
+  -ms-flex-align: $type;
+  align-items: $type;
 }
 
-@mixin alignFlexEnd {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-}
-
-@mixin justifyFlexEnd {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-@mixin justifyCenter {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+@mixin justify($type) {
+  -webkit-box-pack: $type;
+  -ms-flex-pack: $type;
+  justify-content: $type;
 }
 
 @mixin fullWidthHeight {
@@ -121,4 +109,10 @@
   &:hover .StoryImage {
     transform: scale(1.05);
   }
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
 }

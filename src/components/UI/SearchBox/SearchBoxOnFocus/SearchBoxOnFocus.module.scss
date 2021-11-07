@@ -1,0 +1,78 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.SearchBoxOnFocusContainer {
+  @include displayFlex;
+  @include align(center);
+  @include flexFlow(column, nowrap);
+  padding: 7px 18px;
+  width: 300px;
+  background-color: #fff;
+  min-height: 100%;
+  height: max-content;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  top: 0;
+
+  .SearchSection {
+    @include displayFlex;
+    @include align(center);
+    width: 90%;
+
+    &.focused {
+      animation: inputEl 0.2s linear 0s 1 forwards;
+    }
+
+    label {
+      margin: 0 10px 0 4px;
+      font-size: 1.3em;
+      font-weight: 800;
+    }
+
+    input {
+      padding: 10px 18px;
+      font-size: 1.05em;
+      width: 100%;
+      border-radius: 20px;
+      outline: none;
+      border: 0 none;
+      background-color: $site-light-grey;
+    }
+  }
+
+  .SearchList {
+    @include displayFlex;
+    @include flexFlow(column, nowrap);
+    @include align(flex-start);
+    @include justify(flex-start);
+    width: 100%;
+
+    h3 {
+      font-size: 1.08em;
+      margin: 18px 0 0 0;
+      color: darken($header-text-color, 20%);
+    }
+
+    .NoSearch {
+      @include displayFlex;
+      @include align(center);
+      @include justify(center);
+      width: 100%;
+      font-size: 1.02em;
+      color: $header-text-color;
+    }
+  }
+}
+
+@keyframes inputEl {
+  0% {
+    min-width: 90%;
+    margin-left: 20px;
+  }
+
+  100% {
+    min-width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.RecentSearchBar {
+  @include displayFlex;
+  @include align(center);
+  width: 100%;
+  min-height: 50px;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+}

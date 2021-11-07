@@ -3,8 +3,8 @@
 .postSelectContainer {
   @include displayFlex;
   @include flexFlow(column);
-  @include alignCenter;
-  @include justifyCenter;
+  @include align(center);
+  @include justify(center);
   @include boxShadow(1px, 1px, 3px, #000);
   height: 110px;
   max-width: 100%;

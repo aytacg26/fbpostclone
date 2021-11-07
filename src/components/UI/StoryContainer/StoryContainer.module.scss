@@ -2,11 +2,9 @@
 @import '../../../scss/mixins.scss';
 
 .StoryContainer {
-  display: flex;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  align-items: stretch;
-  justify-content: flex-start;
+  @include displayFlex;
+  @include align(stretch);
+  @include justify(flex-start);
   margin: 5px 0 20px 0;
   width: 100%;
   max-width: 100%;

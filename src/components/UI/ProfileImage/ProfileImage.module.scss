@@ -1,8 +1,8 @@
 @import '../../../scss/mixins.scss';
 .ProfileImageContainer {
   @include displayFlex;
-  @include alignCenter;
-  @include justifyCenter;
+  @include align(center);
+  @include justify(center);
   max-width: 165px;
   max-height: 165px;
   background-color: #fff;
@@ -11,7 +11,9 @@
 
   img {
     border-radius: 50%;
+    -o-object-position: top;
     object-position: top;
+    -o-object-fit: cover;
     object-fit: cover;
     cursor: pointer;
     opacity: 0.9;

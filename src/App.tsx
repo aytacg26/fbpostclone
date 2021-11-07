@@ -7,6 +7,7 @@ import CreatePostSection from './components/UI/PostSelectContainer/CreatePostSec
 import PostOptionsSection from './components/UI/PostSelectContainer/PostOptionsSection/PostOptionsSection';
 import StoryContainer from './components/UI/StoryContainer/StoryContainer';
 
+//TODO : Use Context API or Redux for state management, heavy prop drilling started!!!
 const App = () => {
   return (
     <div className='App'>

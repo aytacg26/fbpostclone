@@ -3,16 +3,17 @@
 
 .MenuButtonContainer {
   @include displayFlex;
-  @include alignCenter;
+  @include align(center);
   width: 100%;
   height: 80%;
+  min-height: inherit;
   margin: 5px;
   color: $header-text-color;
   border-radius: 10px;
   cursor: pointer;
 
   &.centered {
-    @include justifyCenter;
+    @include justify(center);
     cursor: pointer;
   }
 
@@ -23,11 +24,34 @@
   }
 
   .MenuTitle {
+    flex: 1;
     font-size: 1.04em;
     font-weight: 500;
   }
 
   &:hover {
     background-color: $site-hover-grey;
+  }
+
+  .MenuActionButton {
+    @include displayFlex;
+
+    button {
+      @include displayFlex;
+      @include align(center);
+      background-color: transparent;
+      height: 30px;
+      width: 30px;
+      border: 0 none;
+      font-size: 1.1em;
+      color: $header-text-color;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 8px;
+
+      &:hover {
+        background-color: $site-light-grey;
+      }
+    }
   }
 }

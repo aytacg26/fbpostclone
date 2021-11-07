@@ -1,3 +1,4 @@
+import { MdClear } from 'react-icons/md';
 import classes from './MenuButton.module.scss';
 
 interface IProps {
@@ -8,7 +9,9 @@ interface IProps {
   isCentered?: boolean;
   height?: number;
   isImageLink?: boolean;
+  actionIcon?: JSX.Element | string;
   onClick?: (id: string) => void;
+  onAction?: (id: string) => void;
 }
 
 const MenuButton = ({
@@ -19,12 +22,20 @@ const MenuButton = ({
   isCentered,
   height,
   isImageLink,
+  actionIcon,
   onClick,
+  onAction,
 }: IProps) => {
   const menuButtonClickHandler = () => {
     if (id && onClick) {
       console.log(`Menu Button with an Id of ${id}`);
       onClick(id);
+    }
+  };
+
+  const actionHandler = () => {
+    if (id && onAction) {
+      onAction(id);
     }
   };
 
@@ -59,6 +70,13 @@ const MenuButton = ({
       <span className={classes.MenuTitle}>
         <label>{title}</label>
       </span>
+      {onAction && (
+        <div className={classes.MenuActionButton}>
+          <button onClick={actionHandler}>
+            <MdClear />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

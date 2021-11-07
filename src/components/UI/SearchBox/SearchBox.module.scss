@@ -2,7 +2,7 @@
 @import '../../../scss/variables.scss';
 .SearchBox {
   @include displayFlex;
-  @include alignCenter;
+  @include align(center);
   padding: 6px 8px;
   background-color: $site-light-grey;
   border-radius: 20px;

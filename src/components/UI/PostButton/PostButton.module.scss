@@ -2,7 +2,7 @@
 @import '../../../scss/mixins.scss';
 .postButtonContainer {
   @include displayFlex;
-  @include alignCenter;
+  @include align(center);
   width: 100%;
   background-color: $site-light-grey;
   height: 40px;

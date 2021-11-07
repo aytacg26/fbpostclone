@@ -2,22 +2,22 @@
 
 .headerContainer {
   @include GridColumnDivided(3);
+  @include boxShadow(2px, -2px, 5px, black);
   height: 60px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   max-width: 100%;
-  align-items: center;
+  // align-items: center;
   background-color: #fff;
-  box-shadow: 2px -2px 5px black;
+  z-index: 999;
 
   .headerLeft {
+    @include displayFlex;
     @include flexFlow(row, nowrap);
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
+    @include align(center);
+    @include fullWidthHeight;
 
     .headerLogo {
       margin: 0 10px 0 18px;
@@ -26,16 +26,15 @@
 
   .headerCenter {
     @include displayFlex;
-    @include alignFlexEnd;
-    @include justifyCenter;
-    height: 100%;
-    width: 100%;
+    @include align(flex-end);
+    @include justify(center);
+    @include fullWidthHeight;
   }
 
   .headerRight {
     @include displayFlex;
-    @include alignCenter;
-    @include justifyFlexEnd;
+    @include align(center);
+    @include justify(flex-end);
     padding: 0 20px;
     height: 100%;
   }

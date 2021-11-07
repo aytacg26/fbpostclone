@@ -2,7 +2,7 @@
 .SectionContainer {
   //   @include displayFlex;
   @include flexSpaceBetween;
-  @include alignCenter;
+  @include align(center);
   @include fullWidthHeight;
 
   &.containerBorder {

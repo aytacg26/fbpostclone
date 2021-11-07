@@ -2,15 +2,15 @@
 @import '../../../scss/mixins.scss';
 
 .CreateTextSection {
+  @include displayFlex;
+  @include justify(center);
+  @include align(flex-end);
   height: 50px;
   position: absolute;
   z-index: 20;
   width: 100%;
   bottom: 0;
   background-color: #fff;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   padding-bottom: 10px;
 
   p {
@@ -22,13 +22,13 @@
 
 .ButtonSection {
   @include displayFlex;
-  @include alignCenter;
-  @include justifyCenter;
+  @include align(center);
+  @include justify(center);
+  @include transform(translate(-50%, -11px));
   position: absolute;
   bottom: 25px;
   left: 50%;
   z-index: 30;
-  transform: translate(-50%, -11px);
   background-color: $site-blue-color;
   width: 35px;
   height: 35px;
