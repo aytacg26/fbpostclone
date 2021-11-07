@@ -1,0 +1,33 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.ModalContainer {
+  @include heightMaxContent;
+  @include widthMaxContent;
+  @include transform(translate(-50%, -30%));
+  @include boxShadow(2px, 2px, 3px, black);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 8px;
+
+  .HeaderSection {
+    @include displayFlex;
+    @include align(center);
+    @include justify(space-between);
+    min-height: 30px;
+    padding: 14px;
+    border-bottom: 1px solid $site-light-grey;
+
+    h3 {
+      margin: 0 25px;
+    }
+  }
+
+  .ModalContent {
+    padding: 20px;
+  }
+}

@@ -10,7 +10,7 @@ import { HiUserGroup } from 'react-icons/hi';
 import { BiTimeFive } from 'react-icons/bi';
 import classes from './Header.module.scss';
 
-const recentSearches = [
+const recentSearchList = [
   {
     id: 'search-userid-0001',
     title: 'best restaurants in cyprus',
@@ -23,7 +23,10 @@ const recentSearches = [
   },
 ];
 
+//TODO : From Header to MenuButton, we are forwarding delete action too much, need to use Context API or Redux
+// Header => SearchBoxOnFocus => RecentSearchBar => MenuButton
 const Header = () => {
+  const [recentSearches, setRecentSearches] = useState(recentSearchList);
   const [isInputFocused, setIsInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   useOnClickOutside(inputRef, () => setIsInputFocused(false));
@@ -38,6 +41,12 @@ const Header = () => {
     setIsInputFocused((prevState) => !prevState);
   };
 
+  const handleDelete = (id: string) => {
+    setRecentSearches((prevState) =>
+      prevState.filter((search) => search.id !== id)
+    );
+  };
+
   return (
     <div className={classes.headerContainer}>
       <div className={classes.headerLeft}>
@@ -46,6 +55,7 @@ const Header = () => {
             recentSearches={recentSearches}
             isInputFocused={isInputFocused}
             ref={inputRef}
+            onDelete={handleDelete}
           />
         )}
         <div className={classes.headerLogo}>

@@ -28,7 +28,6 @@ const MenuButton = ({
 }: IProps) => {
   const menuButtonClickHandler = () => {
     if (id && onClick) {
-      console.log(`Menu Button with an Id of ${id}`);
       onClick(id);
     }
   };

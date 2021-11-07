@@ -19,7 +19,11 @@ const useOnClickOutside = (
           handler(event);
         }
 
-        if (!ref.current || ref.current.contains(event.target)) {
+        if (
+          !ref.current ||
+          ref.current.contains(event.target) ||
+          ref.current.offsetParent.contains(event.target)
+        ) {
           return;
         }
 

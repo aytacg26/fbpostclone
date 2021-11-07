@@ -1,0 +1,11 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.Backdrop {
+  @include heightMaxContent;
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 990;
+}
