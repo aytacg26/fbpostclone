@@ -4,6 +4,7 @@ import { MdOutlineOndemandVideo } from 'react-icons/md';
 import { HiUserGroup } from 'react-icons/hi';
 import classes from './HeaderPagesMenu.module.scss';
 
+//TODO : add correct uri for the pages after creating related pages. Each HeaderIcon is a Link from react-router-dom
 const HeaderPagesMenu = () => {
   return (
     <div className={classes.headerCenter}>

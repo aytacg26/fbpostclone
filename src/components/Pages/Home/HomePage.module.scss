@@ -1,0 +1,14 @@
+@import '../../../scss/mixins.scss';
+
+.mainContentContainer {
+  @include displayFlex;
+  padding-top: 60px;
+  overflow: hidden;
+  max-height: calc(100vh - 60px);
+
+  .postsSection {
+    @include displayFlex;
+    @include flexFlow(column);
+    margin: 18px auto;
+  }
+}

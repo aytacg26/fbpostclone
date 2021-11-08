@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { RootState } from '../../store';
+import { createSlice } from '@reduxjs/toolkit'; //currently we do  not need PayloadAction to toolkit
+// import type { RootState } from '../../store'; //currently no required
 
 interface UIState {
   showModal: boolean;

@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { BiTimeFive } from 'react-icons/bi';
 import MenuButton from '../../MenuButton/MenuButton';
 import classes from './RecentSearchBar.module.scss';
+import PropTypes from 'prop-types';
 
-//TODO : Use State Management
+//TODO : For searches, we will need an action, Link may not be suitable for this Component
 const RecentSearchBar = ({ id, title }: IMenuButton) => {
   const dispatch = useAppDispatch();
 
@@ -29,3 +30,8 @@ const RecentSearchBar = ({ id, title }: IMenuButton) => {
 };
 
 export default RecentSearchBar;
+
+RecentSearchBar.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
