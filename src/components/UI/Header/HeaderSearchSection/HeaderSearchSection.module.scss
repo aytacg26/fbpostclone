@@ -1,0 +1,12 @@
+@import '../../../../scss/mixins.scss';
+
+.headerLeft {
+  @include displayFlex;
+  @include flexFlow(row, nowrap);
+  @include align(center);
+  @include fullWidthHeight;
+
+  .headerLogo {
+    margin: 0 10px 0 18px;
+  }
+}

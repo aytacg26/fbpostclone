@@ -1,12 +1,16 @@
+import { useAppDispatch } from '../../../store/hooks';
+import { setSearchBoxFocus } from '../../../store/features/ui/uiSlice';
 import { BsSearch } from 'react-icons/bs';
 import classes from './SearchBox.module.scss';
 
-interface IProps {
-  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
-}
-
 //TODO : Make it looks like real facebook search box, currently it is very simple
-const SearchBox = ({ onFocus }: IProps) => {
+const SearchBox = () => {
+  const dispatch = useAppDispatch();
+
+  const focusHandler = () => {
+    dispatch(setSearchBoxFocus());
+  };
+
   return (
     <div className={classes.SearchBox}>
       <label>
@@ -17,7 +21,7 @@ const SearchBox = ({ onFocus }: IProps) => {
         type='search'
         name='search'
         placeholder='Search TellBook'
-        onFocus={onFocus}
+        onFocus={focusHandler}
       />
     </div>
   );

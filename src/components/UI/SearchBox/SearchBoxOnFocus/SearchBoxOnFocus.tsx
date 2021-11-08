@@ -7,11 +7,10 @@ import classes from './SearchBoxOnFocus.module.scss';
 interface IProps {
   recentSearches: IMenuButton[];
   isInputFocused: boolean;
-  onDelete: (id: string) => void;
 }
 
 const SearchBoxOnFocus = forwardRef<HTMLInputElement, IProps>(
-  ({ recentSearches, isInputFocused, onDelete }, ref) => {
+  ({ recentSearches, isInputFocused }, ref) => {
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
@@ -19,10 +18,6 @@ const SearchBoxOnFocus = forwardRef<HTMLInputElement, IProps>(
         setAnimate(true);
       }
     }, [isInputFocused]);
-
-    const recentSearchDeleteHandler = (id: string) => {
-      onDelete(id);
-    };
 
     return (
       <div className={classes.SearchBoxOnFocusContainer}>
@@ -45,7 +40,6 @@ const SearchBoxOnFocus = forwardRef<HTMLInputElement, IProps>(
                   id={search.id}
                   title={search.title}
                   key={search.id}
-                  onClick={recentSearchDeleteHandler}
                 />
               ))}
             </Fragment>

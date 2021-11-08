@@ -1,0 +1,7 @@
+@import '../../../../scss/mixins.scss';
+.headerCenter {
+  @include displayFlex;
+  @include align(flex-end);
+  @include justify(center);
+  @include fullWidthHeight;
+}

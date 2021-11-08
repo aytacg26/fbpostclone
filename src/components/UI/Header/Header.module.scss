@@ -13,24 +13,6 @@
   background-color: #fff;
   z-index: 900;
 
-  .headerLeft {
-    @include displayFlex;
-    @include flexFlow(row, nowrap);
-    @include align(center);
-    @include fullWidthHeight;
-
-    .headerLogo {
-      margin: 0 10px 0 18px;
-    }
-  }
-
-  .headerCenter {
-    @include displayFlex;
-    @include align(flex-end);
-    @include justify(center);
-    @include fullWidthHeight;
-  }
-
   .headerRight {
     @include displayFlex;
     @include align(center);
