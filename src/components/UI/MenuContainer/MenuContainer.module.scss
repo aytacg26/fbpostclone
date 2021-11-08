@@ -14,6 +14,15 @@
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: #bcc0c4;
+  position: fixed;
+
+  &.Left {
+    left: 0;
+  }
+
+  &.Right {
+    right: 0;
+  }
 
   &::-webkit-scrollbar {
     width: 8px;

@@ -1,8 +1,11 @@
 import LeftMenu from '../../UI/LeftMenu/LeftMenu';
 import StoryContainer from '../../UI/StoryContainer/StoryContainer';
-
 import RightMenu from '../../UI/RightMenu/RightMenu';
 import PostSelect from './PostSelect/PostSelect';
+
+//just for test purpose
+import PostImageWindow from '../../UI/PostImageWindow/PostImageWindow';
+
 import classes from './HomePage.module.scss';
 
 const HomePage = () => {
@@ -12,6 +15,10 @@ const HomePage = () => {
       <div className={classes.postsSection}>
         <StoryContainer />
         <PostSelect />
+        <div style={{ marginTop: '10px', maxHeight: '100%' }}>
+          <PostImageWindow />
+        </div>
+        <div className={classes.endOfSection}></div>
       </div>
       <RightMenu />
     </div>

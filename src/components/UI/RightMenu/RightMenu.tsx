@@ -2,7 +2,7 @@ import MenuContainer from '../MenuContainer/MenuContainer';
 
 const RightMenu = () => {
   return (
-    <MenuContainer>
+    <MenuContainer menuPosition='right'>
       <div>Right Menu</div>
     </MenuContainer>
   );

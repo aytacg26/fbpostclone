@@ -5,9 +5,10 @@
   @include displayFlex;
   @include align(stretch);
   @include justify(flex-start);
-  margin: 5px 0 20px 0;
-  width: 100%;
+  margin: 10px 2px 20px 2px;
+  min-width: 100%;
   max-width: 100%;
+  min-height: 200px;
   padding: 5px 0;
   overflow-x: hidden;
 }
