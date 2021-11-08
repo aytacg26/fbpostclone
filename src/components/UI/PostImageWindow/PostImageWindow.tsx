@@ -58,6 +58,11 @@ const sampleImages = [
   //   },
 ];
 
+//TODO : Most Hard Part, it should form itself automatically according to number of images
+//to make it highly responsive to the height and width of the images, image data should be
+//supplied. till 5th image it has 6 different structures and after 5th, it need to show +number of images
+//on click, it should also open a modal which will also be a image slider.
+//(Same stucture idea exist (except modal) while uploading images)
 const PostImageWindow = () => {
   return (
     <div className={classes.WindowContainer}>
