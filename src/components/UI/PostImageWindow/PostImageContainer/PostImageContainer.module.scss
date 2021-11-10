@@ -1,0 +1,96 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.imageContainer {
+  position: absolute;
+  overflow: hidden;
+
+  //TOP a tag
+  .ImageLink {
+    flex-shrink: 0;
+    flex-direction: row;
+    margin-bottom: 0;
+    -webkit-tab-highlight-color: transparent;
+    cursor: pointer;
+    text-align: inherit;
+    inset: 0;
+    min-width: 0;
+    border-radius: inherit;
+    flex-basis: auto;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-left: 0;
+    align-items: stretch;
+    background-color: transparent;
+    touch-action: manipulation;
+    z-index: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 0px solid $dark-overlay;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+
+    .NumberOfExcessImages {
+      @include displayFlex;
+      @include align(center);
+      @include justify(center);
+      @include flexFlow(column, nowrap);
+      background-color: $dark-overlay;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      .excessNumber {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+  }
+
+  .imageFlows {
+    overflow: hidden;
+
+    .wrapper {
+      height: 0;
+      overflow: hidden;
+      position: relative;
+
+      .root {
+        position: absolute;
+        top: 0;
+
+        .Image {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .bottomSupport {
+      pointer-events: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      inset: 0;
+      box-sizing: border-box;
+      position: absolute;
+    }
+  }
+
+  .flowSupporter {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+}

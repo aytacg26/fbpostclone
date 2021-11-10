@@ -1,0 +1,77 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.singleImageContainer {
+  position: relative;
+
+  .ImageLink {
+    @include displayFlex;
+    @include flexFlow(row, nowrap);
+    @include align(stretch);
+    padding: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    flex-basis: auto;
+    position: relative;
+    margin: 0;
+    border-radius: inherit;
+    text-align: inherit;
+    min-height: 0;
+    min-width: 0;
+    background-color: transparent;
+    touch-action: manipulation;
+    z-index: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 0px solid $dark-overlay;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+
+    .MainWrapper {
+      @include displayFlex;
+      @include align(center);
+      @include flexFlow(column, nowrap);
+      background-color: #fff;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      .imageRootWrapper {
+        overflow: hidden;
+        position: relative;
+        height: 0;
+
+        .imageWrapper {
+          position: absolute;
+          top: 0;
+
+          .image {
+            @include fullWidthHeight;
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .Borders {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .MainWrapperSupporter {
+      position: absolute;
+      border-radius: inherit;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+}
