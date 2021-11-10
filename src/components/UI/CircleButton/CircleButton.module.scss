@@ -19,6 +19,6 @@
   transition-property: background-color;
 
   &:hover {
-    background-color: darken($default-button-color, 10%);
+    background-color: darken($default-button-color, 10%) !important;
   }
 }

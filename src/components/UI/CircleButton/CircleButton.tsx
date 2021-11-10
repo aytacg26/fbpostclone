@@ -7,13 +7,21 @@ interface IProps {
   icon?: JSX.Element;
   onClick?: () => void;
   type?: 'button' | 'reset' | 'submit';
+  backgroundColor?: string;
 }
 
-const CircleButton = ({ width, height, icon, onClick, type }: IProps) => {
+const CircleButton = ({
+  width,
+  height,
+  icon,
+  onClick,
+  type,
+  backgroundColor,
+}: IProps) => {
   return (
     <button
       className={classes.CircleButtonContainer}
-      style={{ width: width, height: height }}
+      style={{ width: width, height: height, backgroundColor: backgroundColor }}
       onClick={onClick}
       type={type}
     >
