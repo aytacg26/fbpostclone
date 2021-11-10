@@ -22,3 +22,11 @@ Expected completion date : Before 15th of November 2021
 ### Wall Image Left Menu Show More Clicked
 
 <img width="958" alt="Page3" src="https://user-images.githubusercontent.com/51089771/140656505-30efc0d9-5992-4c2d-8757-e276c8b04c6b.png">
+
+### Post Presentation Window Started (Uploaded Images Window Completed)
+
+According to the number of uploaded images to the post, the structure/styles of ImageWindow will change
+it checks number of images, number of Portrait Images and Number of Landscape images and creates Pictures
+window of post according to those data.
+
+<img width="960" alt="Page4" src="https://user-images.githubusercontent.com/51089771/141184056-87cfede0-3b23-4fcc-94ca-07ee6dbaa7a4.png">
