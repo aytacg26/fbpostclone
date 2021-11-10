@@ -25,8 +25,11 @@ Expected completion date : Before 15th of November 2021
 
 ### Post Presentation Window Started (Uploaded Images Window Completed)
 
-According to the number of uploaded images to the post, the structure/styles of ImageWindow will change
+According to the number of uploaded images to the post, the structure/styles of ImageWindow will change,
 it checks number of images, number of Portrait Images and Number of Landscape images and creates Pictures
-window of post according to those data.
+window of post according to those data. Needs some refactoring especially on styles, but currently works well
 
 <img width="960" alt="Page4" src="https://user-images.githubusercontent.com/51089771/141184056-87cfede0-3b23-4fcc-94ca-07ee6dbaa7a4.png">
+<img width="958" alt="Page5" src="https://user-images.githubusercontent.com/51089771/141186136-991791eb-1b7a-422c-b6ba-c1f836303e25.png">
+<img width="960" alt="Page6" src="https://user-images.githubusercontent.com/51089771/141186144-5950daed-a534-4825-a739-3920afca39bd.png">
+<img width="959" alt="Page7" src="https://user-images.githubusercontent.com/51089771/141186353-878dd2d8-1718-465f-9784-e2e70f587acb.png">
