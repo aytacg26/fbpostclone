@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsQuestionLg } from 'react-icons/bs';
+import LinkLabel from '../LinkLabel/LinkLabel';
 import classes from './HeaderIcon.module.scss';
 import PropTypes from 'prop-types';
 
@@ -29,7 +30,7 @@ const HeaderIcon = ({ to, icon, label, selected = false }: IProps) => {
       onMouseLeave={mouseLeaveHandler}
     >
       <div className={classes.IconArea}>{icon}</div>
-      {hover && <label>{label}</label>}
+      {hover && <LinkLabel text={label} />}
     </Link>
   );
 };
