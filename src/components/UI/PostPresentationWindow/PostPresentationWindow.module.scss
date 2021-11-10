@@ -1,0 +1,27 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+.PostPresentationWindowContainer {
+  @include displayFlex;
+  @include flexFlow(column, nowrap);
+  @include boxShadow(1px, 1px, 2px, black);
+  width: 99%;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+
+  .UpperSection {
+    @include displayFlex;
+    @include flexFlow(column, nowrap);
+    padding: 8px 12px;
+
+    .UserLabelMenuSection {
+      @include displayFlex;
+      @include flexFlow(row, nowrap);
+      @include justify(space-between);
+    }
+
+    .TextSection {
+      padding: 5px 2px;
+    }
+  }
+}
