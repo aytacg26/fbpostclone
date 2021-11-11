@@ -1,0 +1,33 @@
+.MenuCard {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  height: max-content;
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  z-index: 999;
+  width: max-content;
+  max-width: 100%;
+  box-shadow: 1px 2px 3px black;
+  border-radius: 10px;
+
+  .TopArrow {
+    position: absolute;
+    top: -21px;
+    right: 9px;
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 1px -1px 2px black;
+  }
+
+  .BottomArrow {
+    position: absolute;
+    bottom: -18px;
+    right: 9px;
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 1px 3px 2px black;
+  }
+}
