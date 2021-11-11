@@ -4,9 +4,11 @@ import classes from './PostPresentationWindow.module.scss';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import PostImageWindow from '../PostImageWindow/PostImageWindow';
 import PostText from './PostText/PostText';
+import PostStatistics from './PostStatistics/PostStatistics';
 import CircleButton from '../CircleButton/CircleButton';
 import UserLabel from '../UserLabel/UserLabel';
 import PostMenu from './PostMenu/PostMenu';
+import PostInteractions from './PostInteractions/PostInteractions';
 
 //This will get all data from Post and User, Text Section will be rendered if there is a text above the post
 const PostPresentationWindow = () => {
@@ -40,8 +42,8 @@ const PostPresentationWindow = () => {
         />
       </div>
       <PostImageWindow />
-      <div>Interaction Statistics</div>
-      <div>Interaction Options</div>
+      <PostStatistics />
+      <PostInteractions />
       <div>Comments Section</div>
     </div>
   );
