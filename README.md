@@ -33,3 +33,7 @@ window of post according to those data. Needs some refactoring especially on sty
 <img width="958" alt="Page5" src="https://user-images.githubusercontent.com/51089771/141186136-991791eb-1b7a-422c-b6ba-c1f836303e25.png">
 <img width="960" alt="Page6" src="https://user-images.githubusercontent.com/51089771/141186144-5950daed-a534-4825-a739-3920afca39bd.png">
 <img width="959" alt="Page7" src="https://user-images.githubusercontent.com/51089771/141186353-878dd2d8-1718-465f-9784-e2e70f587acb.png">
+
+### Static Post Menu added to the Post Window (functionality will be added)
+
+<img width="958" alt="PostMenu_Completed" src="https://user-images.githubusercontent.com/51089771/141324723-da57aa86-26d9-4919-99dd-8fadb2af17fa.png">
