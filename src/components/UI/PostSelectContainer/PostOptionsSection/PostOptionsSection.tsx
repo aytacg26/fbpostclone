@@ -39,6 +39,7 @@ const PostOptionsSection = () => {
           {...postOption}
           key={postOption.id}
           onClick={menuButtonClickHandler}
+          margin={2}
         />
       ))}
     </SectionContainer>
