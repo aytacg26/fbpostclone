@@ -6,7 +6,8 @@
   @include flexFlow(column, nowrap);
   padding: 5px 0;
   border-top: 2px solid $site-hover-grey;
-  min-height: 226px;
+  min-height: 218px;
+  margin-top: 13px;
 
   p {
     color: $site-hover-grey;
