@@ -1,29 +1,43 @@
+import { useState, useRef } from 'react';
+import useOnClickOutside from '../../../Hooks/useOnClickOutside';
 import classes from './PostPresentationWindow.module.scss';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import PostImageWindow from '../PostImageWindow/PostImageWindow';
+import PostText from './PostText/PostText';
 import CircleButton from '../CircleButton/CircleButton';
 import UserLabel from '../UserLabel/UserLabel';
+import PostMenu from './PostMenu/PostMenu';
 
 //This will get all data from Post and User, Text Section will be rendered if there is a text above the post
 const PostPresentationWindow = () => {
+  const [showPostMenu, setShowPostMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  useOnClickOutside(menuRef, () => setShowPostMenu(false));
+
+  const postMenuHandler = () => {
+    setShowPostMenu((prevState) => !prevState);
+  };
+
   return (
     <div className={classes.PostPresentationWindowContainer}>
       <div className={classes.UpperSection}>
         <div className={classes.UserLabelMenuSection}>
           <UserLabel />
-          <div>
+          <div className={classes.PostMenu}>
             <CircleButton
               backgroundColor='#fff'
               icon={<BiDotsHorizontalRounded />}
+              onClick={postMenuHandler}
             />
+            {showPostMenu && <PostMenu ref={menuRef} />}
           </div>
         </div>
-        <div className={classes.TextSection}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
-          asperiores eius beatae officiis facilis aliquam excepturi libero
-          reiciendis consequuntur corrupti cumque ipsam adipisci eligendi
-          deserunt, nisi quibusdam saepe distinctio possimus.
-        </div>
+        <PostText
+          text=' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
+      asperiores eius beatae officiis facilis aliquam excepturi libero
+      reiciendis consequuntur corrupti cumque ipsam adipisci eligendi deserunt,
+      nisi quibusdam saepe distinctio possimus.'
+        />
       </div>
       <PostImageWindow />
       <div>Interaction Statistics</div>

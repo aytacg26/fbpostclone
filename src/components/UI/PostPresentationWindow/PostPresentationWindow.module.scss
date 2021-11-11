@@ -7,7 +7,7 @@
   width: 99%;
   background-color: #fff;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 0 auto 25px auto;
 
   .UpperSection {
     @include displayFlex;
@@ -18,6 +18,14 @@
       @include displayFlex;
       @include flexFlow(row, nowrap);
       @include justify(space-between);
+
+      .PostMenu {
+        @include displayFlex;
+        @include align(center);
+        @include justify(flex-end);
+        position: relative;
+        width: 100%;
+      }
     }
 
     .TextSection {
