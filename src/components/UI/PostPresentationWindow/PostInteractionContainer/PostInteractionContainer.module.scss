@@ -1,0 +1,15 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.PostInteractionContainer {
+  @include displayFlex;
+  @include align(center);
+  padding: 4px 14px;
+  max-width: 100%;
+  min-height: 35px;
+  border-bottom: 1px solid $site-hover-grey;
+
+  &.spaceBetween {
+    @include justify(space-between);
+  }
+}
