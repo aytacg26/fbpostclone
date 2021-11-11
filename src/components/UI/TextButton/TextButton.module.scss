@@ -1,0 +1,14 @@
+@import '../../../scss/variables.scss';
+
+.TextButton {
+  background-color: transparent;
+  border: 0 none;
+  cursor: pointer;
+  color: $header-text-color;
+  font-size: 1.01em;
+  position: relative;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
