@@ -5,8 +5,12 @@ interface IProps {
   id?: string;
   icon?: JSX.Element | string;
   title?: string;
+  buttonInfoText?: string;
   iconColor?: string;
+  margin?: string | number;
+  padding?: string | number;
   isCentered?: boolean;
+  hasBottomBorder?: boolean;
   height?: number;
   isImageLink?: boolean;
   actionIcon?: JSX.Element | string;
@@ -23,6 +27,10 @@ const MenuButton = ({
   isCentered,
   height,
   isImageLink,
+  buttonInfoText,
+  hasBottomBorder,
+  margin,
+  padding,
   actionIcon,
   onClick,
   onAction,
@@ -58,25 +66,39 @@ const MenuButton = ({
 
   return (
     <div
-      className={`${classes.MenuButtonContainer} ${
-        isCentered ? classes.centered : ''
-      }`}
-      style={{ height: height }}
-      onClick={menuButtonClickHandler}
+      className={classes.MainContainer}
+      style={{
+        height: height,
+        borderBottom: `${hasBottomBorder ? '1px solid #ccc' : ''}`,
+      }}
     >
-      <span className={classes.MenuIcon} style={{ color: iconColor }}>
-        {iconEl}
-      </span>
-      <span className={classes.MenuTitle}>
-        <label>{title}</label>
-      </span>
-      {onAction && (
-        <div className={classes.MenuActionButton}>
-          <button onClick={actionHandler}>
-            <MdClear />
-          </button>
+      <div
+        className={`${classes.MenuButtonContainer} ${
+          isCentered ? classes.centered : ''
+        }`}
+        onClick={menuButtonClickHandler}
+        style={{ margin: margin }}
+      >
+        <div
+          className={classes.Content}
+          style={{ padding: padding, margin: margin }}
+        >
+          <span className={classes.MenuIcon} style={{ color: iconColor }}>
+            {iconEl}
+          </span>
+          <div className={classes.MenuTitle}>
+            <label>{title}</label>
+            {buttonInfoText && <span>{buttonInfoText}</span>}
+          </div>
         </div>
-      )}
+        {onAction && (
+          <div className={classes.MenuActionButton}>
+            <button onClick={actionHandler}>
+              <MdClear />
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
