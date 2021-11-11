@@ -1,4 +1,4 @@
-import { image, styleOption } from '../types/dataTypes';
+import { image, entity } from '../types/dataTypes';
 
 export const analyzeImages = (images: image[]) => {
   const arrayLength = images.length < 5 ? images.length : 5;
@@ -1044,4 +1044,51 @@ export const assignStyleToImages = (
   }
 
   return null;
+};
+
+const htmlEntities = Object.freeze({
+  '@': '&#64;',
+  '?': '&#63;',
+  '<': '&#60;',
+  '>': '&#62;',
+  '=': '&#61;',
+  ';': '&#59;',
+  ':': '&#58;',
+  '[': '&#91;',
+  ']': '&#93;',
+  '\\': '&#92;',
+  '(': '&#40;',
+  ')': '&#41;',
+  '+': '&#43;',
+  '%': '&#37;',
+  $: '&#36;',
+  '#': '&#35;',
+  '!': '&#33;',
+  '&': '&#38;',
+  '*': '&#42;',
+  '.': '&#46;',
+  ',': '&#44;',
+  '-': '&#45;',
+  '{': '&#123;',
+  '}': '&#125;',
+  '~': '&#126;',
+  '|': '&#124;',
+  '£': '&#163;',
+  '€': '&#8364;',
+});
+
+export const encodeText = (text: string) => {
+  const textArr = text.split('');
+  let entitiedText = '';
+
+  for (let i = 0; i < textArr.length; i++) {
+    if (textArr[i] in htmlEntities) {
+      const key: entity = textArr[i] as entity;
+      entitiedText += htmlEntities[key];
+    } else {
+      entitiedText += textArr[i];
+    }
+  }
+
+  return entitiedText;
 };
