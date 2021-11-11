@@ -2,18 +2,23 @@
 
 .mainContentContainer {
   @include displayFlex;
+  justify-content: center;
+  align-items: stretch;
+  flex-basis: 744px;
+  flex-shrink: 1;
   padding-top: 50px;
-  overflow: hidden;
-  // max-height: calc(100vh - 60px);
 
   .postsSection {
     @include displayFlex;
     @include flexFlow(column);
+    flex-shrink: 0;
+    box-sizing: border-box;
     margin: 10px auto;
     min-height: calc(100vh - 40px);
     overflow-y: auto;
     max-width: 681px;
     max-height: max-content;
+    z-index: 500;
 
     &::-webkit-scrollbar {
       width: 8px;

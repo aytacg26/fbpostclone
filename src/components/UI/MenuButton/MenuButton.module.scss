@@ -6,6 +6,7 @@
   padding: 3px 0 3px 0;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 
   .MenuButtonContainer {
     @include displayFlex;
@@ -35,6 +36,7 @@
       flex: 1;
       font-size: 1.04em;
       font-weight: 500;
+      cursor: pointer;
 
       span {
         font-size: 0.75em;
