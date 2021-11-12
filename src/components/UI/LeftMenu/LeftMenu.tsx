@@ -8,7 +8,6 @@ import {
   IoIosArrowDropdownCircle,
   IoIosArrowDropupCircle,
 } from 'react-icons/io';
-import profile from '../../../assets/images/aytacguley.jpg';
 import classes from './LeftMenu.module.scss';
 
 const LeftMenuElements = [
