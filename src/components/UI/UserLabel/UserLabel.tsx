@@ -1,62 +1,57 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LinkLabel from '../LinkLabel/LinkLabel';
-import { MdOutlinePublic } from 'react-icons/md';
-import profile from '../../../assets/images/aytacguley.jpg';
+import { useAppSelector } from '../../../store/hooks';
+import UserLabelAdditionalData from './UserLabelAdditionalData/UserLabelAdditionalData';
+import ProfileImage from '../ProfileImage/ProfileImage';
 import classes from './UserLabel.module.scss';
+import PropTypes from 'prop-types';
 
-const UserLabel = () => {
-  const [showTimeLabel, setShowTimeLabel] = useState(false);
-  const [showPrivacyLabel, setShowPrivacyLabel] = useState(false);
-  const [showUserCard, setShowUserCard] = useState(false);
+interface IProps {
+  showDateAndTime: boolean;
+  showFullName: boolean;
+  hasBackground?: boolean;
+  width?: string;
+}
+
+//TODO : Add props to the component
+//TODO : Install latest version of Moment.js for the dates (or if there is better option, use that package)
+//TODO : Create UserCard Component and add it to the UserLabel, add prop to make it active or passive!!
+//TODO : Make Label's place dynamic, it should check if it is outside the main section, should move left or right or top or bottom automatically!!
+const UserLabel = ({
+  showDateAndTime,
+  showFullName,
+  hasBackground,
+  width,
+}: IProps) => {
+  //const [showUserCard, setShowUserCard] = useState(false);
+  const { user } = useAppSelector((state) => state.user);
 
   //TODO : use moment.js to show dates and times
-  const today = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-
-  const dateLabelHandler = () => {
-    setShowTimeLabel((prevState) => !prevState);
-  };
-
-  const privacyLabelHandler = () => {
-    setShowPrivacyLabel((prevState) => !prevState);
-  };
 
   return (
-    <div className={classes.UserLabelContainer}>
-      <Link to='/user-id' className={classes.UserProfileImage}>
-        <img src={profile} alt='Aytac Guley' height='45' width='45' />
+    <div
+      className={`${classes.UserLabelContainer} ${
+        hasBackground ? classes.buttonShape : ''
+      }`}
+    >
+      <Link to={`/${user.id}`}>
+        <ProfileImage
+          image={user.profileImage}
+          height={width ? width : '42'}
+          width={width ? width : '42'}
+          username={`${user.name} ${user.surname}`}
+        />
       </Link>
-      <div className={classes.DataSection}>
-        <Link to='/user-id'>Aytac Guley</Link>
-        <div className={classes.AdditionalData}>
-          <Link
-            to='/posts/postid'
-            onMouseEnter={dateLabelHandler}
-            onMouseLeave={dateLabelHandler}
-          >
-            {today}
-            {showTimeLabel && <LinkLabel text={today} />}
-          </Link>
-          <span>.</span>
-          <span
-            className={classes.privacy}
-            onMouseEnter={privacyLabelHandler}
-            onMouseLeave={privacyLabelHandler}
-            title='Shared with public'
-          >
-            <MdOutlinePublic />
-            {showPrivacyLabel && <LinkLabel text='Public' />}
-          </span>
-        </div>
-      </div>
+      <UserLabelAdditionalData
+        showDateAndTime={showDateAndTime}
+        showFullName={showFullName}
+      />
     </div>
   );
 };
 
 export default UserLabel;
+
+UserLabel.propTypes = {
+  showDateAndTime: PropTypes.bool.isRequired,
+  showFullName: PropTypes.bool.isRequired,
+};
