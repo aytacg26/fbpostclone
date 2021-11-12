@@ -17,6 +17,7 @@
   cursor: pointer;
   transition: linear 0.25s;
   transition-property: background-color;
+  position: relative;
 
   &:hover {
     background-color: darken($default-button-color, 10%) !important;
