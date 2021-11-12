@@ -1,0 +1,53 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.DataSection {
+  width: max-content;
+  margin-left: 5px;
+  margin-bottom: 8px;
+
+  a {
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    color: darken($header-text-color, 10%);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .AdditionalData {
+    @include displayFlex;
+    @include justify(center);
+
+    a,
+    span {
+      font-size: 0.8em;
+      font-weight: 400;
+      color: lighten($header-text-color, 15%);
+    }
+
+    span {
+      @include displayFlex;
+      @include align(center);
+      @include justify(center);
+      margin-left: 3px;
+      cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .privacy {
+      cursor: default;
+      position: relative;
+    }
+  }
+
+  .Seperator {
+    padding: 0 3px;
+    font-size: 14px;
+  }
+}
