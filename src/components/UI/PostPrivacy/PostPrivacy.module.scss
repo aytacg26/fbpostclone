@@ -1,0 +1,9 @@
+@import '../../../scss/variables.scss';
+
+.privacy {
+  cursor: default;
+  position: relative;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: lighten($header-text-color, 15%);
+}
