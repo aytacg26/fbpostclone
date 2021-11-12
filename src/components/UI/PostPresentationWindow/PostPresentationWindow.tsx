@@ -24,7 +24,7 @@ const PostPresentationWindow = () => {
     <div className={classes.PostPresentationWindowContainer}>
       <div className={classes.UpperSection}>
         <div className={classes.UserLabelMenuSection}>
-          <UserLabel />
+          <UserLabel showDateAndTime={true} showFullName={true} />
           <div className={classes.PostMenu}>
             <CircleButton
               backgroundColor='#fff'
