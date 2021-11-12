@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useAppSelector } from '../../../store/hooks';
 import MenuButton from '../MenuButton/MenuButton';
 import MenuContainer from '../MenuContainer/MenuContainer';
 import { Link } from 'react-router-dom';
@@ -141,6 +142,7 @@ const LeftMenuElements = [
 
 const LeftMenu = () => {
   const [showMore, setShowMore] = useState(false);
+  const { user } = useAppSelector((state) => state.user);
 
   const menuExpandHandler = () => {
     setShowMore((prevState) => !prevState);
@@ -148,8 +150,12 @@ const LeftMenu = () => {
 
   return (
     <MenuContainer>
-      <Link to='/' className={classes.LeftMenuLink}>
-        <MenuButton title={'Aytac Guley'} icon={profile} isImageLink />
+      <Link to={`/${user.id}`} className={classes.LeftMenuLink}>
+        <MenuButton
+          title={`${user.name} ${user.surname}`}
+          icon={user.profileImage}
+          isImageLink
+        />
       </Link>
       {LeftMenuElements.map((el, i) => {
         if (i < 8 && !showMore) {
