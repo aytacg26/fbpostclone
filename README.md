@@ -41,3 +41,7 @@ window of post according to those data. Needs some refactoring especially on sty
 ### Post Interactions Section Draft Structure created - 11/11/2021
 
 <img width="958" alt="PostInteractions" src="https://user-images.githubusercontent.com/51089771/141370129-2c7410a5-4185-4155-a523-c95f7d635760.png">
+
+### Header Right Menu created from the reusable CircleButton Component :
+
+<img width="954" alt="HeaderRightMenu" src="https://user-images.githubusercontent.com/51089771/141525946-bab404df-f67f-45c7-91c8-02aa4306d06e.png">
