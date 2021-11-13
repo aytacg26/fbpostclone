@@ -9,9 +9,15 @@ import CircleButton from '../CircleButton/CircleButton';
 import UserLabel from '../UserLabel/UserLabel';
 import PostMenu from './PostMenu/PostMenu';
 import PostInteractions from './PostInteractions/PostInteractions';
+import { IPost } from '../../../interfaces/IPost';
+import { actionBy } from '../../../types/dataTypes';
 
-//This will get all data from Post and User, Text Section will be rendered if there is a text above the post
-const PostPresentationWindow = () => {
+interface IProps {
+  user: actionBy;
+  post: IPost;
+}
+
+const PostPresentationWindow = ({ user, post }: IProps) => {
   const [showPostMenu, setShowPostMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(menuRef, () => setShowPostMenu(false));
@@ -24,7 +30,13 @@ const PostPresentationWindow = () => {
     <div className={classes.PostPresentationWindowContainer}>
       <div className={classes.UpperSection}>
         <div className={classes.UserLabelMenuSection}>
-          <UserLabel showDateAndTime={true} showFullName={true} />
+          <UserLabel
+            showDateAndTime={true}
+            showFullName={true}
+            user={user}
+            dateAndTime={post.createdAt}
+            privacyType={post.postPrivacyType}
+          />
           <div className={classes.PostMenu}>
             <CircleButton
               backgroundColor='#fff'
@@ -34,15 +46,10 @@ const PostPresentationWindow = () => {
             {showPostMenu && <PostMenu ref={menuRef} />}
           </div>
         </div>
-        <PostText
-          text=' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
-      asperiores eius beatae officiis facilis aliquam excepturi libero
-      reiciendis consequuntur corrupti cumque ipsam adipisci eligendi deserunt,
-      nisi quibusdam saepe distinctio possimus.'
-        />
+        <PostText text={post.text} />
       </div>
-      <PostImageWindow />
-      <PostStatistics />
+      <PostImageWindow images={post.images} />
+      <PostStatistics post={post} />
       <PostInteractions />
       <div>Comments Section</div>
     </div>
