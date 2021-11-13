@@ -52,7 +52,7 @@ const PostStatistics = ({ post }: IProps) => {
 
   return (
     <PostInteractionContainer hasSpaceBetween>
-      <PostRatings />
+      <PostRatings likes={post.likes} />
       <div>
         {numberOfComments > 0 && (
           <TextButton

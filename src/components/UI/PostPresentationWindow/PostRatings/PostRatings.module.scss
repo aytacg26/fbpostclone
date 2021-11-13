@@ -1,0 +1,11 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.RatingsContainer {
+  @include displayFlex;
+  @include align(center);
+
+  .Emojies {
+    @include displayFlex;
+  }
+}
