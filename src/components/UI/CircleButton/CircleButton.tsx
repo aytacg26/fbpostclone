@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MdClear } from 'react-icons/md';
 import LinkLabel from '../LinkLabel/LinkLabel';
 import classes from './CircleButton.module.scss';
+import PropTypes from 'prop-types';
 
 interface IProps {
   width?: string | number;
@@ -51,3 +52,13 @@ const CircleButton = ({
 };
 
 export default CircleButton;
+
+CircleButton.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  margin: PropTypes.string,
+  icon: PropTypes.node,
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  title: PropTypes.string,
+};
