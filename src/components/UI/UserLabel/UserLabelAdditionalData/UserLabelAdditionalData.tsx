@@ -1,27 +1,30 @@
 import { useState } from 'react';
-import { useAppSelector } from '../../../../store/hooks';
 import { Link } from 'react-router-dom';
 import LinkLabel from '../../LinkLabel/LinkLabel';
 import PostPrivacy from '../../PostPrivacy/PostPrivacy';
 import classes from './UserLabelAdditionalData.module.scss';
+import { actionBy, privacy } from '../../../../types/dataTypes';
+import { generatePostTime } from '../../../../utils/utils';
 
 interface IProps {
+  user: actionBy;
+  dateAndTime: Date;
+  privacyType: privacy;
   showDateAndTime: boolean;
   showFullName: boolean;
 }
 
 //TODO : Create state for Posts in Redux, for this part we will need data from state (postid, post privacy, post date etc.)
-const UserLabelAdditionalData = ({ showDateAndTime, showFullName }: IProps) => {
+const UserLabelAdditionalData = ({
+  user,
+  dateAndTime,
+  privacyType,
+  showDateAndTime,
+  showFullName,
+}: IProps) => {
   const [showTimeLabel, setShowTimeLabel] = useState(false);
-  const { user } = useAppSelector((state) => state.user);
 
-  const today = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  const postTime = generatePostTime(dateAndTime);
 
   const dateLabelHandler = () => {
     setShowTimeLabel((prevState) => !prevState);
@@ -39,11 +42,11 @@ const UserLabelAdditionalData = ({ showDateAndTime, showFullName }: IProps) => {
             onMouseEnter={dateLabelHandler}
             onMouseLeave={dateLabelHandler}
           >
-            {today}
-            {showTimeLabel && <LinkLabel text={today} />}
+            {postTime.postDate}
+            {showTimeLabel && <LinkLabel text={postTime.label} />}
           </Link>
           <div className={classes.Seperator}></div>
-          <PostPrivacy privacyType='friends' />
+          <PostPrivacy privacyType={privacyType} />
         </div>
       )}
     </div>

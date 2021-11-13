@@ -19,7 +19,8 @@
 
   .AdditionalData {
     @include displayFlex;
-    @include justify(center);
+    @include justify(flex-start);
+    @include align(center);
 
     a,
     span {
