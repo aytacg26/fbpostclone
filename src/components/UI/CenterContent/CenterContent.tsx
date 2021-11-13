@@ -7,12 +7,16 @@ import classes from './CenterContent.module.scss';
 const CenterContent = () => {
   const { posts } = useAppSelector((state) => state.posts);
 
+  const sortedPosts = [...posts].sort((a, b) => {
+    return b.createdAt.getTime() - a.createdAt.getTime();
+  });
+
   return (
     <div className={classes.postsSection}>
       <StoryContainer />
       <PostSelect />
       <div style={{ marginTop: '10px', maxHeight: '100%' }}>
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <PostPresentationWindow
             user={post.createdBy}
             post={post}
