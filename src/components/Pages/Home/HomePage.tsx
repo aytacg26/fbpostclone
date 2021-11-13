@@ -1,24 +1,13 @@
 import LeftMenu from '../../UI/LeftMenu/LeftMenu';
-import StoryContainer from '../../UI/StoryContainer/StoryContainer';
 import RightMenu from '../../UI/RightMenu/RightMenu';
-import PostSelect from './PostSelect/PostSelect';
-import PostPresentationWindow from '../../UI/PostPresentationWindow/PostPresentationWindow';
+import CenterContent from '../../UI/CenterContent/CenterContent';
 import classes from './HomePage.module.scss';
 
 const HomePage = () => {
   return (
     <div className={classes.mainContentContainer}>
       <LeftMenu />
-      <div className={classes.postsSection}>
-        <StoryContainer />
-        <PostSelect />
-        <div style={{ marginTop: '10px', maxHeight: '100%' }}>
-          <PostPresentationWindow />
-          <PostPresentationWindow />
-          <PostPresentationWindow />
-        </div>
-        <div className={classes.endOfSection}></div>
-      </div>
+      <CenterContent />
       <RightMenu />
     </div>
   );
