@@ -1,12 +1,14 @@
 import StoryWindow from '../StoryWindow/StoryWindow';
+import { useAppSelector } from '../../../store/hooks';
 import { BsPlusLg } from 'react-icons/bs';
-import profile from '../../../assets/images/aytacguley.jpg';
 
 import classes from './CreateStory.module.scss';
 
 const CreateStory = () => {
+  const { user } = useAppSelector((state) => state.user);
+
   return (
-    <StoryWindow image={profile}>
+    <StoryWindow image={user.profileImage}>
       <div className={classes.ButtonSection}>
         <p>
           <BsPlusLg />
