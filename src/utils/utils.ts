@@ -1,4 +1,5 @@
 import { image, entity } from '../types/dataTypes';
+import moment from 'moment';
 
 export const analyzeImages = (images: image[]) => {
   const arrayLength = images.length < 5 ? images.length : 5;
@@ -1091,4 +1092,58 @@ export const encodeText = (text: string) => {
   }
 
   return entitiedText;
+};
+
+export const generatePostTime = (date: Date) => {
+  const current = new Date();
+  const diff = current.getTime() - date.getTime();
+  const hoursFromNow = Math.floor(diff / (3600 * 1000));
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const min = date.getMinutes();
+  const sec = date.getSeconds();
+  const label = moment(`${year}${month}${day} ${hour}${min}${sec}`).format(
+    'MMMM Do YYYY [at] h:mm:ss a'
+  );
+
+  if (hoursFromNow < 24) {
+    return {
+      postDate: moment().hours(hour).minutes(min).seconds(sec).fromNow(),
+      label,
+    };
+  } else {
+    if (current.getFullYear() - year >= 1) {
+      console.log('We are in Year part');
+
+      return {
+        postDate: moment(`${year}${month}${day}`).format('MMMM Do YYYY'),
+        label,
+      };
+    } else if (
+      current.getFullYear() - year === 0 &&
+      current.getMonth() + 1 - month >= 1
+    ) {
+      return {
+        postDate: moment(`${year}${month}${day}`).format('MMMM Do'),
+        label,
+      };
+    } else if (
+      current.getFullYear() - year === 0 &&
+      current.getMonth() + 1 - month === 0 &&
+      current.getDate() - day > 0 &&
+      current.getDate() - day <= 10
+    ) {
+      return {
+        postDate: moment(`${year}${month}${day}`).startOf('day').fromNow(),
+        label,
+      };
+    } else {
+      return {
+        postDate: moment(`${year}${month}${day}`).format('MMMM Do'),
+        label,
+      };
+    }
+  }
 };
