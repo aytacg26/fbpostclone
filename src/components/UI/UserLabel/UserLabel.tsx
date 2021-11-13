@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../../store/hooks';
 import UserLabelAdditionalData from './UserLabelAdditionalData/UserLabelAdditionalData';
 import ProfileImage from '../ProfileImage/ProfileImage';
 import classes from './UserLabel.module.scss';
 import PropTypes from 'prop-types';
+import { actionBy, privacy } from '../../../types/dataTypes';
 
 interface IProps {
+  user: actionBy;
+  dateAndTime: Date;
+  privacyType: privacy;
   showDateAndTime: boolean;
   showFullName: boolean;
   hasBackground?: boolean;
@@ -17,15 +20,15 @@ interface IProps {
 //TODO : Create UserCard Component and add it to the UserLabel, add prop to make it active or passive!!
 //TODO : Make Label's place dynamic, it should check if it is outside the main section, should move left or right or top or bottom automatically!!
 const UserLabel = ({
+  user,
+  dateAndTime,
+  privacyType,
   showDateAndTime,
   showFullName,
   hasBackground,
   width,
 }: IProps) => {
   //const [showUserCard, setShowUserCard] = useState(false);
-  const { user } = useAppSelector((state) => state.user);
-
-  //TODO : use moment.js to show dates and times
 
   return (
     <div
@@ -42,6 +45,9 @@ const UserLabel = ({
         />
       </Link>
       <UserLabelAdditionalData
+        dateAndTime={dateAndTime}
+        user={user}
+        privacyType={privacyType}
         showDateAndTime={showDateAndTime}
         showFullName={showFullName}
       />
