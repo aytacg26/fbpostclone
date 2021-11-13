@@ -45,3 +45,7 @@ window of post according to those data. Needs some refactoring especially on sty
 ### Header Right Menu created from the reusable CircleButton Component :
 
 <img width="954" alt="HeaderRightMenu" src="https://user-images.githubusercontent.com/51089771/141525946-bab404df-f67f-45c7-91c8-02aa4306d06e.png">
+
+### Account Menu added to Header Right Menu
+
+<img width="959" alt="HeaderAccountMenu" src="https://user-images.githubusercontent.com/51089771/141628373-cc6c31f0-139f-4229-b64e-13ff8bf697ca.png">
