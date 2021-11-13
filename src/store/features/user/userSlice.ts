@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'; //currently we do  not need PayloadAction to toolkit
-import type { RootState } from '../../store'; //currently no required
+//import type { RootState } from '../../store'; //currently no required
 import { IUser } from '../../../interfaces/IUser';
-import profile from '../../../assets/images/aytacguley.jpg';
 
 interface UserState {
   user: IUser;
@@ -12,7 +11,7 @@ const initialState: UserState = {
     id: 'aytac.guley127',
     name: 'Aytac',
     surname: 'Guley',
-    profileImage: profile,
+    profileImage: 'https://i.ibb.co/4P9kggC/aytacguley.jpg',
     currentWork: 'Frontend Developer',
     numberOfFriends: 100,
     workPlace: {
