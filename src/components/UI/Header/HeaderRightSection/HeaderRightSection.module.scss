@@ -1,0 +1,30 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.headerRight {
+  @include displayFlex;
+  @include align(center);
+  @include justify(flex-end);
+  padding: 0 20px;
+  height: 100%;
+  position: relative;
+
+  .User {
+    @include displayFlex;
+    @include align(center);
+    margin: 0 5px;
+    padding: 3px 8px;
+    cursor: pointer;
+    text-decoration: none;
+
+    span {
+      margin-left: 3px;
+      font-weight: bolder;
+    }
+
+    &:hover {
+      background-color: $site-hover-grey;
+      border-radius: 20px;
+    }
+  }
+}

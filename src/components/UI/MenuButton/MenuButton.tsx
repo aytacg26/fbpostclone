@@ -4,6 +4,7 @@ import classes from './MenuButton.module.scss';
 interface IProps {
   id?: string;
   icon?: JSX.Element | string;
+  iconSize?: number;
   title?: string;
   buttonInfoText?: string;
   iconColor?: string;
@@ -22,6 +23,7 @@ interface IProps {
 const MenuButton = ({
   id,
   icon,
+  iconSize,
   title,
   iconColor,
   isCentered,
@@ -55,8 +57,8 @@ const MenuButton = ({
         src={icon}
         alt={title}
         title={title}
-        width={35}
-        height={35}
+        width={!iconSize ? 35 : iconSize}
+        height={!iconSize ? 35 : iconSize}
         style={{ borderRadius: '50%' }}
       />
     );
@@ -83,7 +85,10 @@ const MenuButton = ({
           className={classes.Content}
           style={{ padding: padding, margin: margin }}
         >
-          <span className={classes.MenuIcon} style={{ color: iconColor }}>
+          <span
+            className={classes.MenuIcon}
+            style={{ color: iconColor, fontSize: iconSize }}
+          >
             {iconEl}
           </span>
           <div className={classes.MenuTitle}>
