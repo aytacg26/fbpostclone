@@ -103,7 +103,7 @@ const initialState: IPostState = {
           },
           isFriend: true,
           createdAt: new Date(2021, 0, 15, 12, 42, 18),
-          likeType: 'heart',
+          likeType: 'love',
         },
         {
           id: 'like-000006',
@@ -115,7 +115,7 @@ const initialState: IPostState = {
           },
           isFriend: true,
           createdAt: new Date(2021, 0, 15, 12, 45, 18),
-          likeType: 'heart',
+          likeType: 'love',
         },
       ],
       comments: [
@@ -382,7 +382,7 @@ const initialState: IPostState = {
           },
           isFriend: true,
           createdAt: new Date(2021, 0, 15, 12, 42, 18),
-          likeType: 'heart',
+          likeType: 'love',
         },
         {
           id: 'like-000006',
@@ -394,7 +394,7 @@ const initialState: IPostState = {
           },
           isFriend: true,
           createdAt: new Date(2021, 0, 15, 12, 45, 18),
-          likeType: 'heart',
+          likeType: 'love',
         },
       ],
       comments: [
