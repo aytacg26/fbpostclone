@@ -1,0 +1,30 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.UserCardContainer {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  min-width: 285px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px black;
+  border-radius: 15px;
+
+  .UserProfile {
+    @include displayFlex;
+    color: $header-text-color;
+    font-weight: 700;
+    text-decoration: none;
+
+    span {
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+  }
+
+  .CardActions {
+    @include displayFlex;
+    margin-top: 20px;
+  }
+}
