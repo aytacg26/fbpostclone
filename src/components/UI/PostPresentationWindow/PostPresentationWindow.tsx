@@ -36,6 +36,7 @@ const PostPresentationWindow = ({ user, post }: IProps) => {
             user={user}
             dateAndTime={post.createdAt}
             privacyType={post.postPrivacyType}
+            hasUserCard
           />
           <div className={classes.PostMenu}>
             <CircleButton
