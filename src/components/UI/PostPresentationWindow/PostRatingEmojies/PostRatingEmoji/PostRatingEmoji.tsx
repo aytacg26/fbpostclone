@@ -64,7 +64,7 @@ const PostRatingEmoji = ({ likeType, likesOfType }: IProps) => {
         noHoverBackground
       />
       {showLabel && (
-        <LinkLabel heading={heading} top={28} left={48} text={reactionBy} />
+        <LinkLabel heading={heading} top={28} left={10} text={reactionBy} />
       )}
     </div>
   );
