@@ -30,7 +30,7 @@ const TextButton = ({
       {buttonText}
       {showLabel &&
         (labelList && labelList.length > 0 ? (
-          <LinkLabel text={labelList} top={25} left={-5} />
+          <LinkLabel text={labelList} top={25} right={5} />
         ) : (
           <LinkLabel
             text={`${
