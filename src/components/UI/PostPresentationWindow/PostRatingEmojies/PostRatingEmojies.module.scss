@@ -1,0 +1,17 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/mixins.scss';
+
+.PostRatingEmojiContainer {
+  @include displayFlex;
+  padding: 0 5px 0 6px;
+
+  .PostRatingEmoji {
+    @include displayFlex;
+    @include align(center);
+    @include justify(center);
+    @include widthMaxContent;
+    @include heightMaxContent;
+    position: relative;
+    margin: 0 -10px;
+  }
+}
