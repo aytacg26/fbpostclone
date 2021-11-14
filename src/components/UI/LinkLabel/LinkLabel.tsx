@@ -2,13 +2,14 @@ import classes from './LinkLabel.module.scss';
 
 interface IProps {
   text?: string | string[];
+  heading?: string;
   top?: number | string;
   right?: number | string;
   bottom?: number | string;
   left?: number | string;
 }
 
-const LinkLabel = ({ text, left, right, top, bottom }: IProps) => {
+const LinkLabel = ({ heading, text, left, right, top, bottom }: IProps) => {
   let content: any;
   let isList = false;
 
@@ -24,6 +25,7 @@ const LinkLabel = ({ text, left, right, top, bottom }: IProps) => {
       className={`${classes.LinkLabel} ${isList ? classes.List : ''}`}
       style={{ top, right, bottom, left }}
     >
+      {heading && <h4>{heading}</h4>}
       {content}
     </label>
   );

@@ -21,4 +21,9 @@
     @include flexFlow(column, nowrap);
     @include align(flex-start);
   }
+
+  h4 {
+    margin: 3px 0;
+    font-size: 1.03em;
+  }
 }
