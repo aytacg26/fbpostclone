@@ -3,22 +3,29 @@
 
 .postsSection {
   @include displayFlex;
-  @include flexFlow(column);
-  flex-shrink: 0;
+  @include justify(center);
+  @include align(stretch);
+  flex-shrink: 1;
+  padding: 0 32px;
   box-sizing: border-box;
-  margin: 10px auto;
-  min-height: calc(100vh - 40px);
-  overflow-y: auto;
-  max-width: 681px;
-  max-height: max-content;
-  z-index: 500;
+  flex-basis: 744px;
+  flex-grow: 1;
+  position: relative;
+  min-width: 0;
+  z-index: 0;
 
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
+  .contentArea {
+    @include displayFlex;
+    @include flexFlow(column, nowrap);
+    position: relative;
+    min-width: 0;
+    z-index: 0;
+    max-width: 100%;
+    margin-top: 13px;
 
-  .endOfSection {
-    width: 100%;
-    min-height: 100px;
+    .endOfSection {
+      width: 100%;
+      min-height: 60px;
+    }
   }
 }

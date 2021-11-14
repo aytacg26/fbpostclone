@@ -13,18 +13,20 @@ const CenterContent = () => {
 
   return (
     <div className={classes.postsSection}>
-      <StoryContainer />
-      <PostSelect />
-      <div style={{ marginTop: '10px', maxHeight: '100%' }}>
-        {sortedPosts.map((post) => (
-          <PostPresentationWindow
-            user={post.createdBy}
-            post={post}
-            key={post.id}
-          />
-        ))}
+      <div className={classes.contentArea}>
+        <StoryContainer />
+        <PostSelect />
+        <div style={{ marginTop: '10px', maxHeight: '100%' }}>
+          {sortedPosts.map((post) => (
+            <PostPresentationWindow
+              user={post.createdBy}
+              post={post}
+              key={post.id}
+            />
+          ))}
+        </div>
+        <div className={classes.endOfSection}></div>
       </div>
-      <div className={classes.endOfSection}></div>
     </div>
   );
 };
