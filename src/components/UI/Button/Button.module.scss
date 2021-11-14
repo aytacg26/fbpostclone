@@ -1,0 +1,55 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.Button {
+  @include displayFlex;
+  @include align(center);
+  @include justify(center);
+  width: 100%;
+  padding: 8px 10px;
+  border: 0 none;
+  border-radius: 5px;
+  margin: 0 3px;
+  color: #000;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: $site-light-grey;
+  transition: background-color 0.25s linear;
+
+  span {
+    margin: 0 5px;
+  }
+
+  &.Blue,
+  &.Red,
+  &.Orange {
+    color: #fff;
+  }
+
+  &.Blue {
+    background-color: $site-blue-color;
+  }
+  &.Red {
+    background-color: $site-red-color;
+  }
+  &.Orange {
+    background-color: $site-orange-color;
+  }
+
+  &.Blue:hover {
+    background-color: darken($site-blue-color, 8%);
+  }
+
+  &.Red:hover {
+    background-color: darken($site-red-color, 8%);
+  }
+
+  &.Orange:hover {
+    background-color: darken($site-orange-color, 8%);
+  }
+
+  &:hover {
+    background-color: $site-hover-grey;
+  }
+}
