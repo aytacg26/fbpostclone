@@ -64,5 +64,9 @@
     &:hover {
       background-color: $site-hover-grey;
     }
+
+    &.NoHover:hover {
+      background-color: transparent;
+    }
   }
 }

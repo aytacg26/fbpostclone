@@ -12,6 +12,7 @@ interface IProps {
   padding?: string | number;
   isCentered?: boolean;
   hasBottomBorder?: boolean;
+  noHoverBackground?: boolean;
   height?: number;
   isImageLink?: boolean;
   actionIcon?: JSX.Element | string;
@@ -31,6 +32,7 @@ const MenuButton = ({
   isImageLink,
   buttonInfoText,
   hasBottomBorder,
+  noHoverBackground,
   margin,
   padding,
   actionIcon,
@@ -77,7 +79,7 @@ const MenuButton = ({
       <div
         className={`${classes.MenuButtonContainer} ${
           isCentered ? classes.centered : ''
-        }`}
+        } ${noHoverBackground ? classes.NoHover : ''}`}
         onClick={menuButtonClickHandler}
         style={{ margin: margin }}
       >
