@@ -7,7 +7,19 @@ Currently, a dummy initial Face Wall created with a header and left menu section
 also search box on header will have functionality like in facebook.
 
 Start Date : November 6, 2021
-Expected completion date : Before 15th of November 2021
+Expected completion date : Before 15th of November 2021 (Target Date Changed)
+At the beginning, I stated to study to create only the clone of the Facebook Post section (image upload, text etc.)
+but after a while, it turned to be a clone of Facebook wall, for this reason, target date changed to November 21, 2021
+
+- This contain complete Post on Wall (Image Structure, Likes, comments, likes for comments and reply for comments)
+- Post menu
+- Header Menus (all from MarketPlace, Groups, Watch pages to the menus on the right of the header)
+- Right Header Menu, from user account pages to display and accessibility (Dark Mode, Light Mode etc)
+- Functional left side drawer (will open all related pages with the help of react router dom)
+- User profile page (with posts and shares, friends, photos of the user)
+- List of contacts on the right side drawer (But no messenger functionality :stuck_out_tongue_winking_eye: )
+- All simple pages (Privacy, Terms, Advertising etc. they will be a simple copy from Facebook's related pages.)
+- And may be Login Page of Facebook (But no login functionality, FOR NOW :grin: )
 
 ## Date 07/11/2021 Screenshots from the clone study :
 
