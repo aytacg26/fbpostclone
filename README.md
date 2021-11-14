@@ -49,3 +49,7 @@ window of post according to those data. Needs some refactoring especially on sty
 ### Account Menu added to Header Right Menu
 
 <img width="959" alt="HeaderAccountMenu" src="https://user-images.githubusercontent.com/51089771/141628373-cc6c31f0-139f-4229-b64e-13ff8bf697ca.png">
+
+### Emojies added to Likes (Emoji by Like Type and List of users who choose that like type)
+
+<img width="960" alt="emojies" src="https://user-images.githubusercontent.com/51089771/141692966-aecebaf1-e625-4861-b4a8-1314933b3946.png">
