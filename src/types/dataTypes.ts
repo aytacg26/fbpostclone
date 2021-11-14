@@ -36,7 +36,7 @@ export type actionBy = {
 
 export type likeType =
   | 'like'
-  | 'heart'
+  | 'love'
   | 'care'
   | 'haha'
   | 'wow'
