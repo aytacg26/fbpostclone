@@ -16,6 +16,7 @@
   scrollbar-width: thin;
   scrollbar-color: #bcc0c4;
   position: fixed;
+  z-index: 5;
 
   &.Left {
     left: 0;
