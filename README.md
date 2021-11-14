@@ -65,3 +65,7 @@ window of post according to those data. Needs some refactoring especially on sty
 ### Emojies added to Likes (Emoji by Like Type and List of users who choose that like type)
 
 <img width="960" alt="emojies" src="https://user-images.githubusercontent.com/51089771/141692966-aecebaf1-e625-4861-b4a8-1314933b3946.png">
+
+### User Information card added to the Post Window, it checks position and on hover appears top or bottom of the user profile image according to position
+
+<img width="956" alt="UserInfoCard" src="https://user-images.githubusercontent.com/51089771/141701321-c282640e-a473-4ec4-9847-7ee704dd6418.png">
