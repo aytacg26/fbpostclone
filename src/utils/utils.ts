@@ -1147,3 +1147,7 @@ export const generatePostTime = (date: Date) => {
     }
   }
 };
+
+export const capitalizeText = (text: string) => {
+  return `${text.substring(0, 1).toUpperCase()}${text.substring(1)}`;
+};
