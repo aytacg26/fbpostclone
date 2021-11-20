@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, ChangeEvent, useEffect } from 'react';
 import useOnClickOutside from '../../../Hooks/useOnClickOutside';
 import classes from './PostPresentationWindow.module.scss';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
@@ -11,6 +11,10 @@ import PostMenu from './PostMenu/PostMenu';
 import PostInteractions from './PostInteractions/PostInteractions';
 import { IPost } from '../../../interfaces/IPost';
 import { actionBy } from '../../../types/dataTypes';
+import TextArea from '../TextArea/TextArea';
+import { BsEmojiSmile, BsSticky } from 'react-icons/bs';
+import { MdOutlinePhotoCamera } from 'react-icons/md';
+import { AiOutlineFileGif } from 'react-icons/ai';
 
 interface IProps {
   user: actionBy;
@@ -19,12 +23,36 @@ interface IProps {
 
 const PostPresentationWindow = ({ user, post }: IProps) => {
   const [showPostMenu, setShowPostMenu] = useState(false);
+  const [formHeight, setFormHeight] = useState(0);
+  const [initFormHeight, setInitFormHeight] = useState(0);
+  const [comment, setComment] = useState('');
   const menuRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   useOnClickOutside(menuRef, () => setShowPostMenu(false));
 
   const postMenuHandler = () => {
     setShowPostMenu((prevState) => !prevState);
   };
+
+  const postCommentHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setComment(e.target.value);
+  };
+
+  useEffect(() => {
+    if (formRef.current) {
+      setFormHeight(formRef.current?.children[0].clientHeight);
+      setInitFormHeight(formRef.current?.children[0].clientHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (
+      formRef.current &&
+      formHeight !== formRef.current?.children[0].clientHeight
+    ) {
+      setFormHeight(formRef.current?.children[0].clientHeight);
+    }
+  }, [comment, formHeight]);
 
   return (
     <div className={classes.PostPresentationWindowContainer}>
@@ -52,7 +80,44 @@ const PostPresentationWindow = ({ user, post }: IProps) => {
       <PostImageWindow images={post.images} />
       <PostStatistics post={post} />
       <PostInteractions />
-      <div>Comments Section</div>
+      <div className={classes.CommentsSection}>
+        <form
+          className={classes.CommentForm}
+          ref={formRef}
+          style={{
+            flexFlow: `${formHeight > initFormHeight ? 'column' : 'row'}`,
+          }}
+        >
+          <TextArea
+            value={comment}
+            notValid={false}
+            onChange={postCommentHandler}
+            placeholder='Write a comment...'
+            maxLength={600}
+            rows={1}
+            border='0 none'
+            noFocus
+          />
+          <ul
+            style={{
+              width: `${formHeight > initFormHeight ? '100%' : 'max-content'}`,
+            }}
+          >
+            <li>
+              <BsEmojiSmile />
+            </li>
+            <li>
+              <MdOutlinePhotoCamera />
+            </li>
+            <li>
+              <AiOutlineFileGif />
+            </li>
+            <li>
+              <BsSticky />
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
   );
 };

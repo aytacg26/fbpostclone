@@ -14,7 +14,13 @@ interface IProps {
   showCounter?: boolean;
   warningMessage?: string;
   notValid: boolean;
+  noFocus?: boolean;
   useTextError?: boolean;
+  rows?: number;
+  bgColor?: string;
+  borderRadius?: number;
+  border?: string;
+  margin?: string;
   onBlur?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
@@ -32,10 +38,16 @@ const TextArea = ({
   showCounter,
   warningMessage,
   notValid,
+  noFocus,
   useTextError,
   onBlur,
+  rows = 4,
+  bgColor,
+  borderRadius,
+  border,
+  margin,
 }: IProps) => {
-  const [rowSize, setRowSize] = useState(4);
+  const [rowSize, setRowSize] = useState(rows);
   const [currentScrollHeight, setCurrentScrollHeight] = useState<number>(0);
   const [counter, setCounter] = useState(0);
   const [counterInit, setCounterInit] = useState(0);
@@ -68,7 +80,10 @@ const TextArea = ({
     });
 
     if (e.target && e.target.scrollHeight > currentScrollHeight) {
-      setRowSize((prevState) => prevState + 1);
+      setRowSize((prevState) => {
+        return prevState + 1;
+      });
+
       setCurrentScrollHeight(e.target.scrollHeight);
       //convert to number array and use push method to add new charSize
       rowAdded = [
@@ -85,7 +100,10 @@ const TextArea = ({
       rowAdded.length > 0 &&
       e.target.value.length < rowAdded[rowAdded.length - 1].charSize
     ) {
-      setRowSize((prevState) => prevState - 1);
+      setRowSize((prevState) => {
+        return prevState - 1;
+      });
+
       rowAdded.pop();
 
       if (rowAdded.length === 1) {
@@ -101,7 +119,9 @@ const TextArea = ({
     }
   };
 
-  const textClass = `${classes.TextArea} ${notValid ? classes.NotValid : ''}`;
+  const textClass = `${classes.TextArea} ${notValid ? classes.NotValid : ''} ${
+    noFocus ? classes.NoFocus : ''
+  }`;
   const warningClass = `${classes.WarningContainer} ${
     notValid ? classes.Show : ''
   }`;
@@ -111,7 +131,6 @@ const TextArea = ({
       {/* <span>Label</span>  This part should work like in Input Component*/}
       <textarea
         rows={rowSize}
-        cols={50}
         placeholder={placeholder}
         name={name}
         title={title}
@@ -121,7 +140,13 @@ const TextArea = ({
         onChange={handleChange}
         onBlur={onBlur}
         ref={textAreaRef}
-        style={{ marginBottom: !showCounter ? '15px' : '' }}
+        style={{
+          marginBottom: !showCounter ? '15px' : '',
+          borderRadius: !showCounter ? borderRadius : '',
+          border: !showCounter && border ? border : '',
+          backgroundColor: `${bgColor ? bgColor : 'transparent'}`,
+          margin: `${margin ? margin : ''}`,
+        }}
       ></textarea>
       {label && (
         <span

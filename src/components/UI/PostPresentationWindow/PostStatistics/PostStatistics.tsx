@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import PostInteractionContainer from '../PostInteractionContainer/PostInteractionContainer';
 import PostRatings from '../PostRatings/PostRatings';
 import TextButton from '../../TextButton/TextButton';
-import classes from './PostStatistics.module.scss';
 import { IPost } from '../../../../interfaces/IPost';
 
 interface IProps {
   post: IPost;
 }
-//TODO : TextButton Label List does not work properly because of max-width of center section,
-//change the css structure of wall center!!!
+
 //TODO : Comments text button onClick handler will hide comments part of Post
 const PostStatistics = ({ post }: IProps) => {
   const [showShareLabel, setShowShareLabel] = useState(false);

@@ -3,15 +3,20 @@
 
 .TextArea {
   border: 1px solid #ccc;
-  width: 100%;
+  width: calc(100% - 12px);
   max-width: 100%;
   background: #fff;
   resize: none;
-  padding: 10px;
+  padding: 10px 5px;
   outline: 0 none;
-  margin: 10px 0 0 0;
   border-radius: 5px 5px 0 0;
   border-bottom: 0 none;
+  font-family: inherit;
+
+  &.NoFocus:focus {
+    box-shadow: none;
+    border: 0 none;
+  }
 
   &:focus {
     @include formElementFocus;
@@ -36,6 +41,8 @@
 
 .textareaLabel {
   position: relative;
+  max-width: 100%;
+  width: 100%;
 }
 
 .Label {

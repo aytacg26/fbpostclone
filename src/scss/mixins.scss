@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin displayFlex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,4 +117,15 @@
   -webkit-transform: $transforms;
   -ms-transform: $transforms;
   transform: $transforms;
+}
+
+@mixin formElementFocus {
+  border: 1px solid $site-green-color;
+  -webkit-box-shadow: 0 0 4px $site-green-color;
+  box-shadow: 0 0 4px $site-green-color;
+}
+
+@mixin formElementInvalid {
+  border: 1px solid $site-red-color !important;
+  background-color: $site-red-color;
 }

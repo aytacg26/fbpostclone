@@ -50,6 +50,7 @@ const MenuCardItems = [
 ];
 
 //TODO : Refactor, there is difference between user and group menus and it takes name dynamically
+//TODO : Add user of post as props to the component, buttonInfo text will contain the user name in 4th and 5th buttons!!
 const PostMenu = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <MenuCard top={50} right={8} ref={ref}>
