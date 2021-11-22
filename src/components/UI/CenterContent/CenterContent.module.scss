@@ -29,3 +29,18 @@
     }
   }
 }
+
+@media (max-width: 1700px) and (min-width: 1300px) {
+  .contentArea {
+    max-width: 43% !important;
+  }
+}
+
+@media (max-width: 1299px) and (min-width: 1110px) {
+  .postsSection {
+    @include justify(flex-start);
+    .contentArea {
+      max-width: 70% !important;
+    }
+  }
+}

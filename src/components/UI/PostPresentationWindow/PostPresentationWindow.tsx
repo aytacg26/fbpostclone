@@ -123,3 +123,5 @@ const PostPresentationWindow = ({ user, post }: IProps) => {
 };
 
 export default PostPresentationWindow;
+
+PostPresentationWindow.whyDidYouRender = true;

@@ -62,3 +62,5 @@ const PostMenu = forwardRef<HTMLDivElement>((props, ref) => {
 });
 
 export default PostMenu;
+
+PostMenu.whyDidYouRender = true;

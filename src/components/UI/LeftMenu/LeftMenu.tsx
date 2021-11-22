@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAppSelector } from '../../../store/hooks';
+import MediaQuery from 'react-responsive';
 import MenuButton from '../MenuButton/MenuButton';
 import MenuContainer from '../MenuContainer/MenuContainer';
 import { Link } from 'react-router-dom';
@@ -148,43 +149,51 @@ const LeftMenu = () => {
   };
 
   return (
-    <MenuContainer>
-      <Link to={`/${user.id}`} className={classes.LeftMenuLink}>
-        <MenuButton
-          title={`${user.name} ${user.surname}`}
-          icon={user.profileImage}
-          isImageLink
-        />
-      </Link>
-      {LeftMenuElements.map((el, i) => {
-        if (i < 8 && !showMore) {
-          return (
-            <Link to='/' className={classes.LeftMenuLink} key={el.id}>
-              <MenuButton {...el} />
-            </Link>
-          );
-        } else if (showMore) {
-          return (
-            <Link to='/' className={classes.LeftMenuLink} key={el.id}>
-              <MenuButton {...el} />
-            </Link>
-          );
-        } else {
-          return null;
-        }
-      })}
-
-      <div className={classes.LeftMenuLink} onClick={menuExpandHandler}>
-        <MenuButton
-          title={showMore ? 'Show Less' : 'Show More'}
-          icon={
-            showMore ? <IoIosArrowDropupCircle /> : <IoIosArrowDropdownCircle />
+    <MediaQuery minWidth={1300}>
+      <MenuContainer>
+        <Link to={`/${user.id}`} className={classes.LeftMenuLink}>
+          <MenuButton
+            title={`${user.name} ${user.surname}`}
+            icon={user.profileImage}
+            isImageLink
+          />
+        </Link>
+        {LeftMenuElements.map((el, i) => {
+          if (i < 8 && !showMore) {
+            return (
+              <Link to='/' className={classes.LeftMenuLink} key={el.id}>
+                <MenuButton {...el} />
+              </Link>
+            );
+          } else if (showMore) {
+            return (
+              <Link to='/' className={classes.LeftMenuLink} key={el.id}>
+                <MenuButton {...el} />
+              </Link>
+            );
+          } else {
+            return null;
           }
-        />
-      </div>
-      <MenuShortcuts />
-    </MenuContainer>
+        })}
+
+        <div className={classes.LeftMenuLink} onClick={menuExpandHandler}>
+          <MenuButton
+            title={showMore ? 'Show Less' : 'Show More'}
+            icon={
+              showMore ? (
+                <IoIosArrowDropupCircle />
+              ) : (
+                <IoIosArrowDropdownCircle />
+              )
+            }
+          />
+        </div>
+        <MenuShortcuts />
+      </MenuContainer>
+    </MediaQuery>
   );
 };
 
 export default LeftMenu;
+
+LeftMenu.whyDidYouRender = true;

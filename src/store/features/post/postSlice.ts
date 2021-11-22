@@ -12,7 +12,7 @@ const initialState: IPostState = {
   posts: [
     {
       id: 'post-000001',
-      createdAt: new Date(2021, 9, 13, 18, 29, 52),
+      createdAt: new Date(2021, 9, 1, 10, 15, 56, 0),
       createdBy: {
         id: 'aytac.guley127',
         name: 'Aytac',
@@ -54,7 +54,7 @@ const initialState: IPostState = {
             profileImage: 'https://i.ibb.co/sQ1XGXz/markzuckerberg.jpg',
           },
           isFriend: false,
-          createdAt: new Date(2021, 0, 15, 12, 35, 50),
+          createdAt: new Date(2021, 1, 15, 12, 35, 50),
           likeType: 'like',
         },
         {
@@ -66,7 +66,7 @@ const initialState: IPostState = {
             profileImage: 'https://i.ibb.co/gtf2fWp/elonmusk.jpg',
           },
           isFriend: true,
-          createdAt: new Date(2021, 0, 15, 12, 38, 10),
+          createdAt: new Date(2021, 1, 15, 12, 38, 10),
           likeType: 'like',
         },
         {
@@ -78,7 +78,7 @@ const initialState: IPostState = {
             profileImage: 'https://i.ibb.co/K5p4LxF/billgates.jpg',
           },
           isFriend: true,
-          createdAt: new Date(2021, 0, 15, 12, 39, 15),
+          createdAt: new Date(2021, 1, 15, 12, 39, 15),
           likeType: 'haha',
         },
         {
@@ -90,7 +90,7 @@ const initialState: IPostState = {
             profileImage: 'https://i.ibb.co/k0k9RyC/sylvester-stallone.jpg',
           },
           isFriend: true,
-          createdAt: new Date(2021, 0, 15, 12, 40, 15),
+          createdAt: new Date(2021, 1, 15, 12, 40, 15),
           likeType: 'wow',
         },
         {
